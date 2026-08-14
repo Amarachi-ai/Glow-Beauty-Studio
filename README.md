@@ -122,3 +122,11 @@ Homepage - About us - services - Enquiry - Contact
 -Updated website content to reflect the Glow & Grace Beauty Studio brand.
 
 -Added project information and development details to the README.
+
+## References
+
+Penpoin, 2025. Small business: Importance, Characteristics, Advantage, Disadvantage. [Online] Available at: < https://creative.accountants/small-business/best-kpis-for-small-business/ > [Accessed 10 August 2026] 
+
+Success In Depth, 2024. 13 SMART Goals Examples for Your Beauty Salon. [Online] Available at: < https://successindepth.com/smart-goals-for-beauty-salon/ > [Accessed 10 August 2026] 
+
+WallsMans Creative, 2026. 15 Best KPIs for Small Businesses success you should track. [Online] Available at: < https://creative.accountants/small-business/best-kpis-for-small-business/ > [Accessed 12 August 2026]
