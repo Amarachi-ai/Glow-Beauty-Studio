@@ -88,6 +88,37 @@ The main goal of the Glow Beauty Studio website is to create a professional onli
 
 August 2026 - Business information, services and navigations added to the website
 
-September 2026 - 
+September 2026 - Enquiry and contact pages created with relevant customer information
 
-September 2026 - 
+September 2026 - Website styling and visual design to be developed
+
+November 2026 - Final website testing, improvements and functional to be completed
+
+## Part 1 Details
+The project involves developing a professional website for Glow Beauty Studio, a fictional beauty offering a range of beauty and self-care services to customers from different backgrounds. Part 1 focuses on creating the foundation of the website by developing the HTML pages, adding the business information and services, organization the navigation structure and maintaining the project through GitHub.
+
+## Sitemap
+Homepage - About us - services - Enquiry - Contact
+
+## Changelog
+-Created the Glow & Grace Beauty Studio GitHub repository.
+
+-Created the initial website structure and homepage.
+
+-Added the business introduction and call-to-action.
+
+-Added the About page with the business history, mission, vision and values.
+
+-Added information about the Glow & Grace team.
+
+-Added the Services page with detailed beauty services, prices and durations.
+
+-Added the Enquiry page for customer service requests.
+
+-Added the Contact page with business contact information.
+
+-Added navigation links between the website pages.
+
+-Updated website content to reflect the Glow & Grace Beauty Studio brand.
+
+-Added project information and development details to the README.
