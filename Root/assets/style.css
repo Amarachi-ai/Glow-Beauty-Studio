@@ -1,1 +1,201 @@
-h1 
+/* =========================================
+   GLOW BEAUTY STUDIO
+   Girly • Cute • Luxurious
+   ========================================= */
+
+/* General page styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background: linear-gradient(135deg, #fff8fa, #fce8ee);
+    color: #5a3d46;
+    text-align: center;
+}
+
+/* =========================================
+   NAVIGATION BAR
+   ========================================= */
+
+nav {
+    background: linear-gradient(90deg, #c97991, #e5a6b5, #c97991);
+    padding: 20px 10px;
+    box-shadow: 0 4px 15px rgba(151, 76, 96, 0.25);
+    border-bottom: 2px solid #f2c6d0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0 18px;
+    text-transform: capitalize;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #fff4f7;
+    text-shadow: 0 0 8px white;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   MAIN HEADING
+   ========================================= */
+
+h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 38px;
+    color: #a94f6b;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    text-shadow: 1px 2px 4px rgba(169, 79, 107, 0.15);
+}
+
+/* Cute hearts around heading */
+h3::before {
+    content: "♡ ";
+    color: #d4af37;
+}
+
+h3::after {
+    content: " ♡";
+    color: #d4af37;
+}
+
+/* =========================================
+   MAIN IMAGE
+   ========================================= */
+
+img {
+    width: 65%;
+    max-width: 700px;
+    height: auto;
+
+    border-radius: 25px;
+    border: 4px solid #e2bd70;
+
+    box-shadow:
+        0 8px 25px rgba(120, 65, 80, 0.25),
+        0 0 0 8px rgba(255, 255, 255, 0.7);
+
+    margin-bottom: 25px;
+
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+img:hover {
+    transform: scale(1.02);
+
+    box-shadow:
+        0 12px 30px rgba(120, 65, 80, 0.3),
+        0 0 20px rgba(226, 189, 112, 0.4);
+}
+
+/* =========================================
+   TEXT SECTIONS
+   ========================================= */
+
+div {
+    max-width: 750px;
+    margin: 18px auto;
+    padding: 12px 25px;
+
+    font-size: 18px;
+    line-height: 1.8;
+    color: #654650;
+}
+
+/* =========================================
+   BOLD TEXT
+   ========================================= */
+
+b {
+    color: #a94f6b;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+/* =========================================
+   BOOK BUTTON
+   ========================================= */
+
+.btn {
+    background: linear-gradient(135deg, #b85c76, #d88c9f);
+    color: white;
+
+    border: 2px solid #e0b45f;
+    padding: 12px 32px;
+    margin: 10px 5px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    font-weight: bold;
+
+    border-radius: 30px;
+    cursor: pointer;
+
+    box-shadow: 0 5px 12px rgba(160, 75, 100, 0.25);
+
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #d88c9f, #b85c76);
+    color: white;
+
+    transform: translateY(-3px) scale(1.04);
+
+    box-shadow:
+        0 8px 18px rgba(160, 75, 100, 0.35),
+        0 0 12px rgba(226, 189, 112, 0.5);
+}
+
+/* =========================================
+   LINKS
+   ========================================= */
+
+a {
+    text-decoration: none;
+}
+
+/* =========================================
+   MOBILE DESIGN
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        padding: 15px 5px;
+    }
+
+    nav a {
+        display: block;
+        margin: 12px 0;
+        font-size: 16px;
+    }
+
+    h3 {
+        font-size: 28px;
+        margin-top: 35px;
+    }
+
+    img {
+        width: 85%;
+        border-radius: 20px;
+    }
+
+    div {
+        width: 85%;
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+
+    .btn {
+        padding: 10px 25px;
+        font-size: 16px;
+    }
+}
+
