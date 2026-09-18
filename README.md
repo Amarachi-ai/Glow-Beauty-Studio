@@ -123,24 +123,6 @@ Homepage - About us - services - Enquiry - Contact
 
 -Added project information and development details to the README.
 
-## References
-
-Penpoin, 2025. Small business: Importance, Characteristics, Advantage, Disadvantage. [Online] Available at: < https://creative.accountants/small-business/best-kpis-for-small-business/ > [Accessed 10 August 2026] 
-
-Success In Depth, 2024. 13 SMART Goals Examples for Your Beauty Salon. [Online] Available at: < https://successindepth.com/smart-goals-for-beauty-salon/ > [Accessed 10 August 2026] 
-
-WallsMans Creative, 2026. 15 Best KPIs for Small Businesses success you should track. [Online] Available at: < https://creative.accountants/small-business/best-kpis-for-small-business/ > [Accessed 12 August 2026]
-
-Ping net, 2023. Glow Beauty Studio. [Online] Available at: < https://tse1.mm.bing.net/th/id/OIP.MIEOkWU2fLSddZXiorybbAHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3 > [Accessed 14 August 2026]
-
-Pinimg, 2021. Black Glow Beauty. [Online] Available at: < https://i.pinimg.com/originals/f6/98/0c/f6980c47e19d8fc60fc68c461e75a3dc.jpg > [Accessed 14 August 2026]
-
-Explicit, 2025. different race beauty. [Online] Available at: < https://tse1.explicit.bing.net/th/id/OIP.kEoHEfXU1gBGpN1CIsrzBgHaFk?r=0&w=1280&h=964&rs=1&pid=ImgDetMain&o=7&rm=3 > [Accessed 14 August 2026]
-
-Static Wix static, 2020. lash lift and tint. [Online] Available at: < https://static.wixstatic.com/media/59b8c3_d23e2e5bdcfa44829489ba269a312b01~mv2.jpeg/v1/fill/w_600,h_600,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Lash%20Before%20and%20After%2001.jpeg > [Accessed 14 August 2026]
-
-Style Seat, 2025. Express Facial. [Online] Available at: < https://www.styleseat.com/blog/wp-content/uploads/2022/07/close-up-facial-scaled-1.jpg > [Accessed 14 August 2026]
-
 # Glow & Grace Beauty Studio
 
 ## Part 2 – Website Development
@@ -329,4 +311,20 @@ Glow & Grace Beauty Studio
 * The overall user experience was improved through better organisation, styling, navigation and form functionality.
 * The GitHub repository was updated to include the latest version of the website and documentation for Part 2.
 
+## References
+Explicit, 2025. different race beauty. [Online] Available at: < https://tse1.explicit.bing.net/th/id/OIP.kEoHEfXU1gBGpN1CIsrzBgHaFk?r=0&w=1280&h=964&rs=1&pid=ImgDetMain&o=7&rm=3 > [Accessed 14 August 2026]
+
+Ping net, 2023. Glow Beauty Studio. [Online] Available at: < https://tse1.mm.bing.net/th/id/OIP.MIEOkWU2fLSddZXiorybbAHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3 > [Accessed 14 August 2026]
+
+Pinimg, 2021. Black Glow Beauty. [Online] Available at: < https://i.pinimg.com/originals/f6/98/0c/f6980c47e19d8fc60fc68c461e75a3dc.jpg > [Accessed 14 August 2026]
+
+Penpoin, 2025. Small business: Importance, Characteristics, Advantage, Disadvantage. [Online] Available at: < https://creative.accountants/small-business/best-kpis-for-small-business/ > [Accessed 10 August 2026] 
+
+Success In Depth, 2024. 13 SMART Goals Examples for Your Beauty Salon. [Online] Available at: < https://successindepth.com/smart-goals-for-beauty-salon/ > [Accessed 10 August 2026] 
+
+Static Wix static, 2020. lash lift and tint. [Online] Available at: <https://static.wixstatic.com/media/59b8c3_d23e2e5bdcfa44829489ba269a312b01~mv2.jpeg/v1/fill/w_600,h_600,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Lash%20Before%20and%20After%2001.jpeg > [Accessed 14 August 2026]
+
+Style Seat, 2025. Express Facial. [Online] Available at: < https://www.styleseat.com/blog/wp-content/uploads/2022/07/close-up-facial-scaled-1.jpg > [Accessed 14 August 2026]
+
+WallsMans Creative, 2026. 15 Best KPIs for Small Businesses success you should track. [Online] Available at: < https://creative.accountants/small-business/best-kpis-for-small-business/ > [Accessed 12 August 2026]
 
