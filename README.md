@@ -141,3 +141,77 @@ Static Wix static, 2020. lash lift and tint. [Online] Available at: < https://st
 
 Style Seat, 2025. Express Facial. [Online] Available at: < https://www.styleseat.com/blog/wp-content/uploads/2022/07/close-up-facial-scaled-1.jpg > [Accessed 14 August 2026]
 
+# Glow & Grace Beauty Studio
+
+## Part 2 – Website Development
+
+### Project Overview
+
+Glow & Grace Beauty Studio is a small beauty business website created to provide customers with information about the business, its beauty services, and how to make an enquiry. The website uses a clean, modern and luxurious design with nude and brown colours to create a warm and professional beauty studio feel.
+
+### Part 2 Updates
+
+For Part 2, the website was updated and improved based on the requirements of the assignment. The existing pages were developed further to improve the website's appearance, functionality and user experience.
+
+### Website Pages
+
+* Home Page
+* About Page
+* Services Page
+* Equity Page
+* Enquiry/Contact Page
+
+### Improvements Made
+
+* Updated the website design and layout.
+* Improved the navigation between pages.
+* Added and updated website content.
+* Improved the enquiry/contact form.
+* Added form fields and validation.
+* Improved the visual appearance of the website.
+* Updated colours, fonts and spacing to match the beauty studio theme.
+* Improved the website's usability and user experience.
+* Checked that the website works correctly across the different pages.
+
+### Design
+
+The website follows a clean girl luxury beauty aesthetic.
+
+* **Colour scheme:** Nude, beige, brown and white.
+* **Typography:** Clean and elegant fonts.
+* **Layout:** Simple, spacious and organised.
+* **Design:** Modern, feminine and professional.
+* **User Experience:** Easy navigation and clear information for customers.
+
+### Technologies Used
+
+* HTML5
+* CSS3
+* Bootstrap
+* JavaScript
+* GitHub
+
+### Project Goals
+
+* Create a professional website for Glow & Grace Beauty Studio.
+* Provide customers with clear information about the business and its services.
+* Make it easy for customers to submit an enquiry.
+* Create a simple and user-friendly website.
+* Demonstrate the use of HTML, CSS, Bootstrap and JavaScript.
+
+### GitHub Development
+
+GitHub was used to store and manage the website files during development. Changes were committed regularly to keep track of the progress made during Part 2.
+
+### Changelog
+
+#### Part 2
+
+* Updated website pages.
+* Improved website styling.
+* Updated navigation.
+* Improved enquiry form.
+* Added form validation.
+* Updated content.
+* Improved overall website layout and user experience.
+* Tested website functionality.
