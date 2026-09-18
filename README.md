@@ -202,6 +202,36 @@ The website follows a clean girl luxury beauty aesthetic.
 ### GitHub Development
 
 GitHub was used to store and manage the website files during development. Changes were committed regularly to keep track of the progress made during Part 2.
+
+Website Sitemap
+Glow & Grace Beauty Studio
+│
+├── Home
+│
+├── About
+│   ├── Business Information
+│   ├── History
+│   ├── Mission
+│   └── Vision
+│
+├── Services
+│   ├── Makeup Services
+│   ├── Nail Services
+│   ├── Lash Services
+│   └── Beauty Treatments
+│
+├── Enquiry
+│   ├── Full Name
+│   ├── Email Address
+│   ├── Contact Number
+│   ├── Service Required
+│   └── Message
+│
+└── Contact
+    ├── Contact Information
+    ├── Phone Number
+    ├── Email Address
+    └── Social Media
 ## Changelog
 
 ### Part 2 – Website Development and Improvements
