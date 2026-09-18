@@ -205,33 +205,8 @@ GitHub was used to store and manage the website files during development. Change
 
 Website Sitemap
 Glow & Grace Beauty Studio
-│
-├── Home
-│
-├── About
-│   ├── Business Information
-│   ├── History
-│   ├── Mission
-│   └── Vision
-│
-├── Services
-│   ├── Makeup Services
-│   ├── Nail Services
-│   ├── Lash Services
-│   └── Beauty Treatments
-│
-├── Enquiry
-│   ├── Full Name
-│   ├── Email Address
-│   ├── Contact Number
-│   ├── Service Required
-│   └── Message
-│
-└── Contact
-    ├── Contact Information
-    ├── Phone Number
-    ├── Email Address
-    └── Social Media
+<img width="1920" height="1280" alt="image" src="https://github.com/user-attachments/assets/879aa237-a336-40d3-9b73-95e26613aa06" />
+
 ## Changelog
 
 ### Part 2 – Website Development and Improvements
