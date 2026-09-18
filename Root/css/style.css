@@ -84,7 +84,107 @@ b {
 a {
     text-decoration: none;
 }
+/* Mobile-friendly design */ 
 
+@media (max-width: 768px) { 
+
+    nav { 
+
+        padding: 15px 5px; 
+
+    } 
+
+ 
+
+    nav a { 
+
+        display: block; 
+
+        margin: 10px 0; 
+
+    } 
+
+ 
+
+    h3 { 
+
+        font-size: 26px; 
+
+    } 
+
+ 
+
+    img { 
+
+        width: 90%; 
+
+    } 
+
+ 
+
+    div { 
+
+        font-size: 16px; 
+
+        padding: 10px 15px; 
+
+    } 
+
+} 
+
+/* Home Page - Mobile-friendly design */ 
+
+@media (max-width: 768px) { 
+
+ 
+
+    .home { 
+
+        padding: 30px 15px; 
+
+        min-height: 400px; 
+
+        background-size: cover; 
+
+        background-position: center; 
+
+    } 
+
+ 
+
+    .home h1 { 
+
+        font-size: 32px; 
+
+    } 
+
+ 
+
+    .home p { 
+
+        font-size: 16px; 
+
+    } 
+
+ 
+
+    nav { 
+
+        padding: 15px 5px; 
+
+    } 
+
+ 
+
+    nav a { 
+
+        display: block; 
+
+        margin: 10px 0; 
+
+    } 
+
+}
 /* Mobile-friendly design */
 @media (max-width: 768px) {
     nav {
