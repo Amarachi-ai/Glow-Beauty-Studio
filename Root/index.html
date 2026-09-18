@@ -1,14 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Home - Glow Beauty Studio</title>
-
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
     <!-- Website Navigation -->
@@ -18,12 +13,15 @@
         <a href="assets/services.html">Services</a>
         <a href="assets/Enquiry.html">Enquiry</a>
         <a href="assets/Contact.html">Contact</a>
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search service...">
+        <button type="button" onclick="searchService()">Search</button>
+    </div>
     </nav>
 
     <!-- Main Welcome Section -->
     <main>
-
-        <section class="hero">
             <p class="welcome-text">WELCOME TO</p>
 
             <h1>Glow Beauty Studio</h1>
@@ -53,11 +51,8 @@
                     Explore Our Services
                 </a>
             </div>
-        </section>
 
         <!-- About Section -->
-        <section class="welcome-card">
-
             <h2>Feel Beautiful. Feel Confident.</h2>
 
             <p>
@@ -70,15 +65,30 @@
                 Book Your Appointment
             </a>
 
-        </section>
-
     </main>
 
-    <!-- Footer -->
+        <!-- Footer -->
     <footer>
         <p>Glow Beauty Studio</p>
         <p>Beauty • Confidence • You</p>
     </footer>
+
+    <script>
+    function searchServices() {
+        const search = document.getElementById("searchInput").value.toLowerCase();
+        const cards = document.querySelectorAll(".service-card");
+
+    cards.forEach(function(card) {
+        const text = card.textContent.toLowerCase();
+
+        if (text.includes(search)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+    </script>
 
 </body>
 </html>
