@@ -202,16 +202,126 @@ The website follows a clean girl luxury beauty aesthetic.
 ### GitHub Development
 
 GitHub was used to store and manage the website files during development. Changes were committed regularly to keep track of the progress made during Part 2.
+## Changelog
 
-### Changelog
+### Part 2 – Website Development and Improvements
 
-#### Part 2
+#### Home Page
 
-* Updated website pages.
-* Improved website styling.
-* Updated navigation.
-* Improved enquiry form.
-* Added form validation.
-* Updated content.
-* Improved overall website layout and user experience.
-* Tested website functionality.
+* Updated the Home page content to clearly introduce Glow & Grace Beauty Studio.
+* Improved the overall layout and spacing of the Home page.
+* Added clear headings and descriptions to make the information easier to read.
+* Improved the call-to-action section to encourage visitors to make an enquiry.
+* Updated the styling to match the nude, brown and clean-girl luxury theme.
+* Improved the navigation menu so users can easily access the different pages.
+* Checked that links between the Home page and other website pages work correctly.
+
+#### About Page
+
+* Updated the About page with information about Glow & Grace Beauty Studio.
+* Added information about the background and history of the business.
+* Added the business mission and vision.
+* Added information about the values of the business.
+* Improved the page structure to make the information easier to understand.
+* Updated the layout and styling to maintain consistency with the rest of the website.
+* Improved spacing, headings and text formatting.
+
+#### Services Page
+
+* Updated the Services page to provide clearer information about the beauty services offered.
+* Organised the services into clear sections.
+* Added descriptions to help customers understand the services.
+* Improved the presentation of the services using headings and organised content.
+* Updated the styling to create a professional and attractive appearance.
+* Improved spacing and alignment between service sections.
+* Added clear information to help customers decide which service they are interested in.
+
+#### Equity Page
+
+* Updated the Equity page to explain the importance of inclusivity and equal treatment.
+* Added information showing that Glow & Grace Beauty Studio welcomes customers from different backgrounds and races.
+* Improved the page structure and readability.
+* Updated the styling to match the overall website design.
+* Added clear headings and organised information.
+
+#### Enquiry / Contact Page
+
+* Improved the enquiry form to make it easier for customers to complete.
+* Added a Full Name field.
+* Added an Email Address field.
+* Added a Contact Number field.
+* Added a Service Required field.
+* Added a Message field.
+* Added appropriate labels for the form fields.
+* Added placeholder text to guide users when completing the form.
+* Added required fields to prevent important information from being left blank.
+* Improved the layout and spacing of the form.
+* Updated the form styling to match the website's nude and brown colour scheme.
+* Added form validation to improve the accuracy of information submitted by users.
+* Checked that the form fields work correctly.
+
+#### Website Design and Styling
+
+* Updated the website to follow a clean, modern and luxurious beauty aesthetic.
+* Used nude, beige, brown and white shades throughout the website.
+* Improved typography to make the website look professional and easy to read.
+* Improved spacing between sections and elements.
+* Improved alignment of content.
+* Updated buttons and interactive elements.
+* Improved the overall consistency of the website design.
+* Ensured that the different pages have a consistent visual appearance.
+
+#### Navigation and User Experience
+
+* Checked the navigation menu across all pages.
+* Updated links between the website pages.
+* Ensured users can move between the Home, About, Services, Equity and Enquiry pages.
+* Improved the organisation of website content.
+* Made important information easier for users to find.
+* Improved the overall user experience by keeping the layout simple and organised.
+* Checked that buttons and links direct users to the correct pages.
+
+#### Technical Updates
+
+* Updated the HTML structure of the website.
+* Updated CSS styling where necessary.
+* Used Bootstrap components and classes to improve the website layout.
+* Added or updated JavaScript functionality where required.
+* Improved form validation.
+* Checked the website for errors in the code.
+* Tested the website pages after making changes.
+* Checked that images, links and other website elements display correctly.
+* Organised the project files to make the website easier to manage.
+
+#### GitHub Updates
+
+* Updated the GitHub repository with the latest Part 2 website files.
+* Added the latest changes to the project files.
+* Updated the README.md file with Part 2 information.
+* Added the updated website sitemap to the README.md file.
+* Added a detailed changelog to document the development process.
+* Committed changes regularly to keep track of website development.
+* Used clear commit messages to describe the changes made.
+* Checked the repository to ensure that the required files were uploaded correctly.
+
+#### Testing
+
+* Tested all website navigation links.
+* Tested the enquiry form fields.
+* Checked required form fields.
+* Checked that the website content displays correctly.
+* Checked the layout and spacing of each page.
+* Checked that the website maintains a consistent design across all pages.
+* Checked for errors and corrected issues found during development.
+* Reviewed the final website before updating the GitHub repository.
+
+### Final Part 2 Outcome
+
+* The Glow & Grace Beauty Studio website was further developed and improved during Part 2.
+* The website now has a more consistent design and improved navigation.
+* The enquiry form provides customers with a clear way to submit their information.
+* The website content was improved to provide customers with useful information about the business and its services.
+* The overall user experience was improved through better organisation, styling, navigation and form functionality.
+* The GitHub repository was updated to include the latest version of the website and documentation for Part 2.
+
+
