@@ -188,130 +188,128 @@ GitHub was used to store and manage the website files during development. Change
 Website Sitemap
 Glow & Grace Beauty Studio
 <img width="1920" height="1280" alt="image" src="https://github.com/user-attachments/assets/879aa237-a336-40d3-9b73-95e26613aa06" />
-
 ## Changelog
 
-### Part 2 – Website Development and Improvements
+### Part 2 – Website Development
 
-#### Home Page
+#### 17 September 2026 – Website Updates
 
-* Updated the Home page content to clearly introduce Glow & Grace Beauty Studio.
-* Improved the overall layout and spacing of the Home page.
-* Added clear headings and descriptions to make the information easier to read.
-* Improved the call-to-action section to encourage visitors to make an enquiry.
-* Updated the styling to match the nude, brown and clean-girl luxury theme.
-* Improved the navigation menu so users can easily access the different pages.
-* Checked that links between the Home page and other website pages work correctly.
+* Updated the website pages for Part 2 of the WEDE5020 assignment.
+* Reviewed the existing Home, About, Services, Enquiry and Contact pages.
+* Updated website content to provide clearer information about Glow & Grace Beauty Studio.
+* Improved the structure and organisation of the website pages.
+* Checked the navigation links between the different pages.
+* Updated the website styling to maintain the nude, brown and clean-girl luxury aesthetic.
 
-#### About Page
+#### 17 September 2026 – Home Page
 
-* Updated the About page with information about Glow & Grace Beauty Studio.
-* Added information about the background and history of the business.
+* Updated the Home page content.
+* Improved the page layout and spacing.
+* Updated headings and text to make the information easier to understand.
+* Improved the call-to-action section.
+* Checked the navigation links on the Home page.
+* Ensured that the Home page design matches the rest of the website.
+
+#### 17 September 2026 – About Page
+
+* Updated the About page information.
+* Added information about the business history.
 * Added the business mission and vision.
-* Added information about the values of the business.
-* Improved the page structure to make the information easier to understand.
-* Updated the layout and styling to maintain consistency with the rest of the website.
-* Improved spacing, headings and text formatting.
+* Added information about the values of Glow & Grace Beauty Studio.
+* Improved the organisation of the page content.
+* Updated the styling to match the website's overall design.
 
-#### Services Page
+#### 17 September 2026 – Services Page
 
-* Updated the Services page to provide clearer information about the beauty services offered.
-* Organised the services into clear sections.
-* Added descriptions to help customers understand the services.
-* Improved the presentation of the services using headings and organised content.
-* Updated the styling to create a professional and attractive appearance.
-* Improved spacing and alignment between service sections.
-* Added clear information to help customers decide which service they are interested in.
+* Updated the Services page.
+* Added and organised the beauty services offered by the business.
+* Added descriptions for the different services.
+* Improved the layout and spacing of the service sections.
+* Updated the styling to make the services easier to view.
+* Checked that the Services page links correctly from the navigation menu.
 
-#### Equity Page
+#### 18 September 2026 – Enquiry Page
 
-* Updated the Equity page to explain the importance of inclusivity and equal treatment.
-* Added information showing that Glow & Grace Beauty Studio welcomes customers from different backgrounds and races.
-* Improved the page structure and readability.
-* Updated the styling to match the overall website design.
-* Added clear headings and organised information.
-
-#### Enquiry / Contact Page
-
-* Improved the enquiry form to make it easier for customers to complete.
+* Updated the enquiry form.
 * Added a Full Name field.
 * Added an Email Address field.
 * Added a Contact Number field.
 * Added a Service Required field.
 * Added a Message field.
-* Added appropriate labels for the form fields.
-* Added placeholder text to guide users when completing the form.
-* Added required fields to prevent important information from being left blank.
+* Added labels and placeholder text to the form fields.
+* Added required fields to ensure important information is completed.
 * Improved the layout and spacing of the form.
-* Updated the form styling to match the website's nude and brown colour scheme.
-* Added form validation to improve the accuracy of information submitted by users.
-* Checked that the form fields work correctly.
+* Checked the form fields and corrected formatting issues.
 
-#### Website Design and Styling
+#### 18 September 2026 – Contact Page
 
-* Updated the website to follow a clean, modern and luxurious beauty aesthetic.
-* Used nude, beige, brown and white shades throughout the website.
-* Improved typography to make the website look professional and easy to read.
-* Improved spacing between sections and elements.
-* Improved alignment of content.
-* Updated buttons and interactive elements.
-* Improved the overall consistency of the website design.
-* Ensured that the different pages have a consistent visual appearance.
+* Updated the Contact page information.
+* Added relevant contact information for customers.
+* Improved the page layout and organisation.
+* Updated the styling to match the rest of the website.
+* Checked the contact links and navigation.
 
-#### Navigation and User Experience
+#### 18 September 2026 – Responsive Navigation
 
-* Checked the navigation menu across all pages.
-* Updated links between the website pages.
-* Ensured users can move between the Home, About, Services, Equity and Enquiry pages.
-* Improved the organisation of website content.
-* Made important information easier for users to find.
-* Improved the overall user experience by keeping the layout simple and organised.
-* Checked that buttons and links direct users to the correct pages.
+* Added a responsive navigation menu.
+* Added a hamburger menu for smaller screen sizes.
+* Used HTML and CSS to create the hamburger menu.
+* Ensured that the navigation links can be accessed on mobile devices.
+* Tested the navigation menu to check that it opens and closes correctly.
+* Improved the mobile user experience.
 
-#### Technical Updates
+#### 18 September 2026 – Website Design
 
-* Updated the HTML structure of the website.
-* Updated CSS styling where necessary.
-* Used Bootstrap components and classes to improve the website layout.
-* Added or updated JavaScript functionality where required.
-* Improved form validation.
-* Checked the website for errors in the code.
-* Tested the website pages after making changes.
-* Checked that images, links and other website elements display correctly.
-* Organised the project files to make the website easier to manage.
+* Updated the website colour scheme.
+* Used nude, beige, brown and white shades.
+* Improved typography and text presentation.
+* Improved spacing and alignment.
+* Updated buttons and navigation elements.
+* Ensured that the website maintains a consistent clean and luxurious beauty aesthetic.
+* Reviewed the pages to ensure that the design is consistent.
 
-#### GitHub Updates
+#### 18 September 2026 – Sitemap
 
-* Updated the GitHub repository with the latest Part 2 website files.
-* Added the latest changes to the project files.
-* Updated the README.md file with Part 2 information.
-* Added the updated website sitemap to the README.md file.
-* Added a detailed changelog to document the development process.
-* Committed changes regularly to keep track of website development.
-* Used clear commit messages to describe the changes made.
-* Checked the repository to ensure that the required files were uploaded correctly.
+* Created the updated website sitemap.
+* Added the Home page.
+* Added the About page.
+* Added the Services page.
+* Added the Enquiry page.
+* Added the Contact page.
+* Organised the sitemap to show the structure and relationship between the website pages.
+* Added the sitemap to the GitHub documentation.
 
-#### Testing
+#### 18 September 2026 – GitHub
 
-* Tested all website navigation links.
-* Tested the enquiry form fields.
-* Checked required form fields.
-* Checked that the website content displays correctly.
-* Checked the layout and spacing of each page.
-* Checked that the website maintains a consistent design across all pages.
-* Checked for errors and corrected issues found during development.
-* Reviewed the final website before updating the GitHub repository.
+* Updated the GitHub repository with the latest website files.
+* Updated the README.md file.
+* Added the Part 2 project information.
+* Added the website sitemap.
+* Added the Part 2 changelog.
+* Reviewed the repository to ensure that the latest files were uploaded.
+* Used commit messages to document changes made to the website.
 
-### Final Part 2 Outcome
+#### 18 September 2026 – Testing and Final Review
 
-* The Glow & Grace Beauty Studio website was further developed and improved during Part 2.
-* The website now has a more consistent design and improved navigation.
-* The enquiry form provides customers with a clear way to submit their information.
-* The website content was improved to provide customers with useful information about the business and its services.
-* The overall user experience was improved through better organisation, styling, navigation and form functionality.
-* The GitHub repository was updated to include the latest version of the website and documentation for Part 2.
+* Tested the website navigation.
+* Checked the links between all pages.
+* Tested the enquiry form.
+* Checked the required form fields.
+* Reviewed the website layout.
+* Checked the website on different screen sizes.
+* Checked for errors in the HTML and CSS.
+* Corrected issues found during testing.
+* Reviewed the final website before submission.
 
-## References
+### Part 2 Final Outcome
+
+* The Glow & Grace Beauty Studio website was developed further for Part 2.
+* The website content, navigation, design and enquiry functionality were improved.
+* A responsive hamburger menu was added for mobile users.
+* The website sitemap and changelog were added to the GitHub documentation.
+* The GitHub repository was updated with the latest version of the website.
+
+
 Explicit, 2025. different race beauty. [Online] Available at: < https://tse1.explicit.bing.net/th/id/OIP.kEoHEfXU1gBGpN1CIsrzBgHaFk?r=0&w=1280&h=964&rs=1&pid=ImgDetMain&o=7&rm=3 > [Accessed 14 August 2026]
 
 Ping net, 2023. Glow Beauty Studio. [Online] Available at: < https://tse1.mm.bing.net/th/id/OIP.MIEOkWU2fLSddZXiorybbAHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3 > [Accessed 14 August 2026]
