@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry - Glow Beauty Studio</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    
+    <!-- Website Navigation -->
+<nav aria-label="Main navigation">
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <a href="../index.html">Homepage</a>
+    <a href="About.html">About</a>
+    <a href="Services.html">Services</a>
+    <a href="Enquiry.html" aria-current="page">Enquiry</a>
+    <a href="Contact.html">Contact</a>
+</nav>
+    <!-- Page Header -->
+    <header class="page-header">
+        <p class="welcome-text">BOOK WITH US</p>
+        <h1>Book Your Beauty Experience</h1>
+        <p>
+            Ready to glow? Complete the enquiry form below
+            and let us know how we can help you.
+        </p>
+    </header>
+
+    <main>
+        <!-- Enquiry Section -->
+        <section class="enquiry-section">
+            <!-- Information -->
+            <div class="enquiry-info">
+
+                <h2>Let's Get You Glowing</h2>
+                <p>
+                    Thank you for choosing Glow Beauty Studio.
+                    Please complete the form with your preferred
+                    service and appointment details.
+                </p>
+
+                <p>
+                    Once we receive your enquiry, we will contact
+                    you to confirm your appointment.
+                </p>
+
+                    <div class="detail-box">
+                        <h3>Business Hours</h3>
+                        <p>
+                            Monday - Friday: 09:00 - 17:00<br>
+                            Saturday: 09:00 - 15:00<br>
+                            Sunday: Closed
+                        </p>
+                    </div>
+
+                    <div class="detail-box">
+                        <h3>Email</h3>
+                        <p>
+                            glowbeautystudio@example.com
+                        </p>
+                    </div>
+
+                
+
+            </div>
+
+
+            <!-- Enquiry Form -->
+            <form action="#" method="post" id="enquiryForm">
+
+    <!-- Full Name -->
+    <div>
+        <label for="fullName" class="form-label mt-4">
+            Full Name
+        </label>
+
+        <input
+            type="text"
+            class="form-control"
+            id="fullName"
+            name="fullName"
+            placeholder="Enter your full name"
+            required
+        >
+
+        <small class="form-text text-muted">
+            Please enter your first and last name.
+        </small>
+    </div>
+
+
+    <!-- Email Address -->
+    <div>
+        <label for="emailAddress" class="form-label mt-4">
+            Email Address
+        </label>
+
+        <input
+            type="email"
+            class="form-control"
+            id="emailAddress"
+            name="emailAddress"
+            placeholder="Enter your email address"
+            required
+        >
+
+        <small class="form-text text-muted">
+            We will use this email to confirm your enquiry.
+        </small>
+    </div>
+
+
+    <!-- Phone Number -->
+    <div>
+        <label for="phoneNumber" class="form-label mt-4">
+            Phone Number
+        </label>
+
+        <input
+            type="tel"
+            class="form-control"
+            id="phoneNumber"
+            name="phoneNumber"
+            placeholder="e.g. 071 234 5678"
+            required
+        >
+
+        <small class="form-text text-muted">
+            Please provide a number we can use to contact you.
+        </small>
+    </div>
+
+
+    <!-- Services -->
+    <div>
+        <label for="service" class="form-label mt-4">
+            Services
+        </label>
+
+        <select
+            class="form-control"
+            id="service"
+            name="service"
+            required>
+
+            <option value="">
+                Select a service
+            </option>
+
+            <option value="soft-glam">
+                Soft Glam Makeup - R450
+            </option>
+
+            <option value="full-glam">
+                Full Glam Makeup - R550
+            </option>
+
+            <option value="natural-makeup">
+                Natural Makeup - R350
+            </option>
+
+            <option value="classic-lashes">
+                Classic Lash Extensions - R500
+            </option>
+
+            <option value="hybrid-lashes">
+                Hybrid Lash Extensions - R600
+            </option>
+
+            <option value="lash-lift">
+                Lash Lift & Tint - R350
+            </option>
+
+            <option value="gel-manicure">
+                Gel Manicure - R350
+            </option>
+
+            <option value="gel-pedicure">
+                Gel Pedicure - R350
+            </option>
+
+            <option value="express-facial">
+                Express Facial - R300
+            </option>
+
+            <option value="beauty-consultation">
+                Beauty Consultation
+            </option>
+
+        </select>
+
+        <small class="form-text text-muted">
+            Choose the beauty service you would like to book.
+        </small>
+    </div>
+
+
+    
+<!-- Preferred Date -->
+<div class="booking-field">
+    <label for="preferredDate" class="form-label">
+        Preferred Date
+    </label>
+
+    <input
+        type="date"
+        class="form-control"
+        id="preferredDate"
+        name="preferredDate"
+        min="2026-10-29"
+        required
+    >
+
+    <small class="form-text">
+        Choose your preferred appointment date.
+    </small>
+</div>
+
+<!-- Available Appointment Times -->
+<div class="booking-field">
+    <p class="form-label" id="appointmentTimeLabel">
+     Choose an Appointment Time
+    </p>
+
+   <div class="time-slots" id="timeSlots" role="group" aria-labelledby="appointmentTimeLabel">
+        <button type="button" class="time-slot" data-time="09:00">09:00</button>
+        <button type="button" class="time-slot" data-time="10:00">10:00</button>
+        <button type="button" class="time-slot" data-time="11:00">11:00</button>
+        <button type="button" class="time-slot" data-time="12:00">12:00</button>
+        <button type="button" class="time-slot" data-time="13:00">13:00</button>
+        <button type="button" class="time-slot" data-time="14:00">14:00</button>
+        <button type="button" class="time-slot" data-time="15:00">15:00</button>
+        <button type="button" class="time-slot" data-time="16:00">16:00</button>
+    </div>
+
+    <input
+    type="hidden"
+    id="preferredTime"
+    name="preferredTime">
+
+    <small class="form-text">
+        Select a preferred time. Your appointment will need confirmation.
+    </small>
+</div>
+
+
+
+    <!-- Message / Special Request -->
+    <div>
+        <label for="message" class="form-label mt-4">
+            Message / Special Request
+        </label>
+
+        <textarea
+            class="form-control"
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Enter any message or special requests..."
+        ></textarea>
+
+        <small class="form-text text-muted">
+            Let us know about any special requests or additional information.
+        </small>
+    </div>
+
+
+    <!-- Submit Button -->
+<button
+    type="submit"
+    class="btn btn-primary mt-4"
+>
+    Submit Enquiry
+</button>
+
+<!-- Form feedback message -->
+<p id="formFeedback" role="status" aria-live="polite"></p>
+</form>
+</section>
+<!-- Customer Feedback Section -->
+<section class="feedback-section">
+
+    <h2>We Value Your Feedback!</h2>
+
+    <p>
+        Thank you for choosing Glow Beauty Studio.
+        Please share your experience with us.
+    </p>
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfxpcUgbrD4VUQrXvj0sXQ83Leen3BqEF47q49cuZ2DA0okJA/viewform?embedded=true" 
+width="640" height="2681" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </section>
+<!-- Bottom Call To Action -->
+<section class="enquiry-cta">
+    <h2>We Can't Wait To See You</h2>
+            <p>
+                Let Glow Beauty Studio help you feel confident,
+                beautiful and ready to shine.
+            </p>
+
+            <a href="services.html" class="btn">
+                View Our Services
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+     ↑
+    </button>
+        <!-- Footer -->
+        <footer>
+
+            <p>Glow Beauty Studio</p>
+
+            <p>
+            Beauty • Confidence • You
+            </p>
+
+        </footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
