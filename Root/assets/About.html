@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Glow Beauty Studio</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <meta name="description" content="Learn more about Glow Beauty Studio, our history, mission, vision and team. Discover our commitment to beauty and self-care in Johannesburg.">
+
+<meta name="keywords" content="About Glow Beauty Studio, beauty team Johannesburg, beauty studio">
+
+<meta name="author" content="Glow Beauty Studio">
+
+<meta name="robots" content="index, follow">
+
+<title>About Us | Glow Beauty Studio</title>
+<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+    
     <!-- Website Navigation -->
-    <nav>
-        <a href="../index.html">Homepage</a>
-        <a href="About.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="Enquiry.html">Enquiry</a>
-        <a href="Contact.html">Contact</a>
-    </nav>
+<nav aria-label="Main navigation">
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <a href="../index.html">Homepage</a>
+    <a href="About.html">About</a>
+    <a href="Services.html">Services</a>
+    <a href="Enquiry.html">Enquiry</a>
+    <a href="Contact.html">Contact</a>
+</nav>
         <!-- Page Header -->
     <header class="page-header">
         <p class="welcome-text">GET TO KNOW US</p>
@@ -25,8 +42,8 @@
     <main>
         <!-- Studio Introduction -->
             <div class="about-image">
-                <img src="../image/black glow beauty.jpg"
-                     alt="Glow Beauty Studio">
+               <img src="../image/black%20glow%20beauty.jpg"
+                alt="Glow Beauty Studio interior and beauty services">
             </div>
             <div class="about-text">
                 <h2>Our Story</h2>
@@ -64,9 +81,8 @@
                 </p>
             </div>
         <!-- Diversity Section -->
-            <img src="../image/difference race beauty.png"
-                 alt="Beauty and diversity">
-            <div>
+            <img src="../image/difference%20race%20beauty.png"
+            alt="People from diverse backgrounds celebrating beauty and inclusion">
                 <h2>Beauty For Everyone</h2>
                 <p>
                     At Glow Beauty Studio, we believe that beauty has no single
@@ -74,7 +90,7 @@
                     and backgrounds and aim to create an environment where
                     everyone feels comfortable and respected.
                 </p>
-               </div>
+               
         <!-- Our Values -->
             <h2>Our Values</h2>
                     <h3>Inclusivity</h3>
@@ -111,28 +127,31 @@
                 Meet the talented people behind Glow Beauty Studio.
             </p>
                 <div>
-                    <img src="../image/soft glam.png">
+                    <img src="../image/soft%20glam.png"
+                     alt="Amarachi Azuaru, Founder and Beauty Director">
                     <h3>Amarachi Azuaru</h3>
                     <strong>Founder & Beauty Director</strong>
                 </div>
 
                 <div>
-                    <img src="../image/lerato mokoena.avif">
+                    <img src="../image/lerato%20mokoena.avif"
+                     alt="Lerato Mokoena, Nail Technician">
                     <h3>Lerato Mokoena</h3>
                     <strong>Nail Technician</strong>
                 </div>
 
                 <div>
-                    <img src="../image/Thandi Nkosi.jpg">
+                    <img src="../image/Thandi%20Nkosi.jpg"
+                     alt="Thandi Nkosi, Lash and Brow Technician">
                     <h3>Thandi Nkosi</h3>
                     <strong>Lash & Brow Technician</strong>
                 </div>
 
                 <div>
-                    <img src="../image/Ayanda dhlamini.webp">
+                    <img src="../image/Ayanda%20dhlamini.webp"
+                     alt="Ayanda Dlamini, Skincare Specialist">
                     <h3>Ayanda Dlamini</h3>
                     <strong>Skincare Specialist</strong>
-                    </p>
                 </div>
 
         <!-- Call to Action -->
@@ -141,16 +160,25 @@
                 Discover our beauty services and find the perfect treatment
                 for you.
             </p>
-            <a href="services.html" class="btn">
+            <a href="Services.html" class="btn">
                 Explore Our Services
             </a>
-    </main>
+        <!-- BACK TO TOP BUTTON -->
+        <button id="backToTop" class="back-to-top" aria-label="Back to top">
+             ↑
+        </button>
+        </main>
         <!-- Footer -->
-    <footer>
-        <p>Glow Beauty Studio</p>
-        <p>Beauty • Confidence • You</p>
-    </footer>
-
+        <footer>
+            <p>Glow Beauty Studio</p>
+            <p>Beauty • Confidence • You</p>
+        </footer>
+        <!-- IMAGE LIGHTBOX -->
+        <div id="imageLightbox" class="lightbox" aria-hidden="true">
+            <button id="closeLightbox" class="lightbox-close" aria-label="Close enlarged image">&times;</button>
+            <img id="lightboxImage" src="../image/black%20glow%20beauty.jpg" alt="Enlarged beauty image">
+        </div>
+    <script src="../js/script.js"></script>
 </body>
 </html>
 

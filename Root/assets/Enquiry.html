@@ -2,19 +2,35 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enquiry - Glow Beauty Studio</title>
+    <meta name="description" content="Make an enquiry at Glow Beauty Studio in Johannesburg. Contact us about our makeup, nail, eyelash and skincare services.">
+
+<meta name="keywords" content="Glow Beauty Studio bookings, beauty service enquiries, beauty appointments Johannesburg">
+
+<meta name="author" content="Glow Beauty Studio">
+
+<meta name="robots" content="index, follow">
+
+<title>Make an Enquiry | Glow Beauty Studio</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+    
     <!-- Website Navigation -->
-    <nav>
-        <a href="../index.html">Homepage</a>
-        <a href="About.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="Enquiry.html">Enquiry</a>
-        <a href="Contact.html">Contact</a>
-    </nav>
-
+<nav aria-label="Main navigation">
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <a href="../index.html">Homepage</a>
+    <a href="About.html">About</a>
+    <a href="Services.html">Services</a>
+    <a href="Enquiry.html" aria-current="page">Enquiry</a>
+    <a href="Contact.html">Contact</a>
+</nav>
     <!-- Page Header -->
     <header class="page-header">
         <p class="welcome-text">BOOK WITH US</p>
@@ -27,6 +43,7 @@
 
     <main>
         <!-- Enquiry Section -->
+        <section class="enquiry-section">
             <!-- Information -->
             <div class="enquiry-info">
 
@@ -41,12 +58,6 @@
                     Once we receive your enquiry, we will contact
                     you to confirm your appointment.
                 </p>
-
-                <div class="business-details">
-                    <div class="detail-box">
-                        <h3>Location</h3>
-                        Johannesburg, Gauteng
-                    </div>
 
                     <div class="detail-box">
                         <h3>Business Hours</h3>
@@ -64,13 +75,13 @@
                         </p>
                     </div>
 
-                </div>
+                
 
             </div>
 
 
             <!-- Enquiry Form -->
-            <form action="#" method="post">
+            <form action="#" method="post" id="enquiryForm">
 
     <!-- Full Name -->
     <div>
@@ -199,44 +210,54 @@
     </div>
 
 
-    <!-- Preferred Date -->
-    <div>
-        <label for="preferredDate" class="form-label mt-4">
-            Preferred Date
-        </label>
+    
+<!-- Preferred Date -->
+<div class="booking-field">
+    <label for="preferredDate" class="form-label">
+        Preferred Date
+    </label>
 
-        <input
-            type="date"
-            class="form-control"
-            id="preferredDate"
-            name="preferredDate"
-            required
-        >
+    <input
+        type="date"
+        class="form-control"
+        id="preferredDate"
+        name="preferredDate"
+        min="2026-10-29"
+        required
+    >
 
-        <small class="form-text text-muted">
-            Select your preferred appointment date.
-        </small>
+    <small class="form-text">
+        Choose your preferred appointment date.
+    </small>
+</div>
+
+<!-- Available Appointment Times -->
+<div class="booking-field">
+    <p class="form-label" id="appointmentTimeLabel">
+     Choose an Appointment Time
+    </p>
+
+   <div class="time-slots" id="timeSlots" role="group" aria-labelledby="appointmentTimeLabel">
+        <button type="button" class="time-slot" data-time="09:00">09:00</button>
+        <button type="button" class="time-slot" data-time="10:00">10:00</button>
+        <button type="button" class="time-slot" data-time="11:00">11:00</button>
+        <button type="button" class="time-slot" data-time="12:00">12:00</button>
+        <button type="button" class="time-slot" data-time="13:00">13:00</button>
+        <button type="button" class="time-slot" data-time="14:00">14:00</button>
+        <button type="button" class="time-slot" data-time="15:00">15:00</button>
+        <button type="button" class="time-slot" data-time="16:00">16:00</button>
     </div>
 
+    <input
+    type="hidden"
+    id="preferredTime"
+    name="preferredTime">
 
-    <!-- Preferred Time -->
-    <div>
-        <label for="preferredTime" class="form-label mt-4">
-            Preferred Time
-        </label>
+    <small class="form-text">
+        Select a preferred time. Your appointment will need confirmation.
+    </small>
+</div>
 
-        <input
-            type="time"
-            class="form-control"
-            id="preferredTime"
-            name="preferredTime"
-            required
-        >
-
-        <small class="form-text text-muted">
-            Select your preferred appointment time.
-        </small>
-    </div>
 
 
     <!-- Message / Special Request -->
@@ -260,20 +281,33 @@
 
 
     <!-- Submit Button -->
-    <button
-        type="submit"
-        class="btn btn-primary mt-4"
-    >
-        Submit Enquiry
-    </button>
+<button
+    type="submit"
+    class="btn btn-primary mt-4"
+>
+    Submit Enquiry
+</button>
 
+<!-- Form feedback message -->
+<p id="formFeedback" role="status" aria-live="polite"></p>
 </form>
-            </div>
+</section>
+<!-- Customer Feedback Section -->
+<section class="feedback-section">
+
+    <h2>We Value Your Feedback!</h2>
+
+    <p>
+        Thank you for choosing Glow Beauty Studio.
+        Please share your experience with us.
+    </p>
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfxpcUgbrD4VUQrXvj0sXQ83Leen3BqEF47q49cuZ2DA0okJA/viewform?embedded=true" 
+width="640" height="2681" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </section>
-
-        <!-- Bottom Call To Action -->
-            <h2>We Can't Wait To See You</h2>
-
+<!-- Bottom Call To Action -->
+<section class="enquiry-cta">
+    <h2>We Can't Wait To See You</h2>
             <p>
                 Let Glow Beauty Studio help you feel confident,
                 beautiful and ready to shine.
@@ -287,18 +321,21 @@
 
     </main>
 
+    <!-- BACK TO TOP BUTTON -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+     ↑
+    </button>
+        <!-- Footer -->
+        <footer>
 
-    <!-- Footer -->
-    <footer>
+            <p>Glow Beauty Studio</p>
 
-        <p>Glow Beauty Studio</p>
-
-        <p>
+            <p>
             Beauty • Confidence • You
-        </p>
+            </p>
 
-    </footer>
-
+        </footer>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

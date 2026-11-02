@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services - Glow Beauty Studio</title>
+    <meta name="description" content="Explore Glow Beauty Studio's beauty services, including makeup, lashes, nails and skincare. View our services and prices in Johannesburg.">
+
+<meta name="keywords" content="makeup Johannesburg, eyelash services, nail services, skincare services, beauty treatments">
+
+<meta name="author" content="Glow Beauty Studio">
+
+<meta name="robots" content="index, follow">
+
+<title>Our Services | Glow Beauty Studio</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-    <!-- Website Navigation -->
-    <nav>
-        <a href="../index.html">Homepage</a>
-        <a href="About.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="Enquiry.html">Enquiry</a>
-        <a href="Contact.html">Contact</a>
-    </nav>
+<nav aria-label="Main navigation">
+    <button class="hamburger" id="hamburger"
+        aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <a href="../index.html">Homepage</a>
+    <a href="About.html">About</a>
+    <a href="Services.html">Services</a>
+    <a href="Enquiry.html">Enquiry</a>
+    <a href="Contact.html">Contact</a>
+</nav>
+
 
     <!-- Page Header -->
     <header class="page-header">
@@ -28,9 +46,25 @@
     </header>
 
     <main>
+        <!-- Services Search -->
+    <section class="services-search">
+        <h2>Find Your Beauty Service</h2>
 
+        <label for="serviceSearch">Search for a service:</label>
+        <input
+            type="search"
+            id="serviceSearch"
+            placeholder="e.g. makeup, lashes, nails..."
+            aria-describedby="searchMessage"
+        >
+
+        <p id="searchMessage" aria-live="polite">
+            Browse our beauty services below.
+        </p>
+    </section>
         <!-- Makeup Services -->
-            <h2>Makeup Services</h2>
+    <section class="service-category">
+    <h2>Makeup Services</h2>
 
             <p class="category-description">
                 From natural everyday looks to glamorous special-event makeup,
@@ -41,7 +75,7 @@
 
                 <div class="service-card">
 
-                    <img src="../image/soft glam.png"
+                    <img src="../image/soft%20glam.png"
                          alt="Soft Glam Makeup">
 
                     <div class="service-content">
@@ -69,7 +103,7 @@
 
                 <div class="service-card">
 
-                    <img src="../image/full glam.png"
+                    <img src="../image/full%20glam.png"
                          alt="Full Glam Makeup">
 
                     <div class="service-content">
@@ -97,7 +131,7 @@
 
                 <div class="service-card">
 
-                    <img src="../image/natural glam.png"
+                    <img src="../image/natural%20glam.png"
                          alt="Natural Makeup">
 
                     <div class="service-content">
@@ -125,9 +159,10 @@
 
             </div>
 
-        </section>
-
+</section>
         <!-- Eyelash Services -->
+<section class="service-category">
+
             <h2>Eyelash Services</h2>
 
             <p class="category-description">
@@ -139,7 +174,7 @@
 
                 <div class="service-card">
 
-                    <img src="../image/classic lashes.jpg"
+                    <img src="../image/classic%20lashes.jpg"
                          alt="Classic Lash Extensions">
 
                     <div class="service-content">
@@ -167,7 +202,7 @@
 
                 <div class="service-card">
 
-                    <img src="../image/hybrid lash.webp"
+                    <img src="../image/hybrid%20lash.webp"
                          alt="Hybrid Lash Extensions">
 
                     <div class="service-content">
@@ -195,7 +230,7 @@
 
                 <div class="service-card">
 
-                    <img src="../image/lash lift and tint.avif"
+                    <img src="../image/lash%20lift%20and%20tint.avif"
                          alt="Lash Lift and Tint">
 
                     <div class="service-content">
@@ -222,8 +257,10 @@
                 </div>
 
             </div>
-
+    </section>
         <!-- Nail Services -->
+    <section class="service-category">
+
             <h2>Nail Services</h2>
 
             <p class="category-description">
@@ -235,7 +272,7 @@
 
                 <div class="service-card">
 
-                    <img src="../image/gel manicure.png"
+                    <img src="../image/gel%20manicure.png"
                          alt="Gel Manicure">
 
                     <div class="service-content">
@@ -263,7 +300,7 @@
 
                 <div class="service-card">
 
-                    <img src="../image/gel pedicure.jpg"
+                    <img src="../image/gel%20pedicure.jpg"
                          alt="Gel Pedicure">
 
                     <div class="service-content">
@@ -290,9 +327,12 @@
                 </div>
 
             </div>
+    </section>
 
-        <!-- Skincare Services -->
-            <h2>Skincare Services</h2>
+       <!-- Skincare Services -->
+    <section class="service-category">
+
+    <h2>Skincare Services</h2>
 
             <p class="category-description">
                 Give your skin the care it deserves with refreshing and
@@ -303,7 +343,7 @@
 
                 <div class="service-card">
 
-                    <img src="../image/express facial.jpg"
+                    <img src="../image/express%20facial.jpg"
                          alt="Express Facial">
 
                     <div class="service-content">
@@ -330,9 +370,11 @@
                 </div>
 
             </div>
+</section>
+            <!-- Beauty Consultation -->
+<section class="service-category">
 
-        <!-- Beauty Consultation -->
-            <p class="welcome-text">PERSONALISED BEAUTY CARE</p>
+    <p class="welcome-text">PERSONALISED BEAUTY CARE</p>
 
             <h2>Beauty Consultation</h2>
 
@@ -354,14 +396,95 @@
             <a href="Enquiry.html" class="btn">
                 Make an Enquiry
             </a>
+</section>
     </main>
-
+<!-- BACK TO TOP BUTTON -->
+<button id="backToTop" class="back-to-top" aria-label="Back to top">
+    ↑
+</button>
     <!-- Footer -->
     <footer>
         <p>Glow Beauty Studio</p>
         <p>Beauty • Confidence • You</p>
     </footer>
+    
+    <!-- Image Lightbox -->
+    <div id="imageLightbox" class="lightbox" aria-hidden="true">
+        <button id="closeLightbox" class="lightbox-close"
+            aria-label="Close enlarged image">&times;</button>
 
+        <img id="lightboxImage" src="../image/soft%20glam.png" alt="Enlarged beauty service image">
+    </div>
+
+    
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("My services JavaScript is running!");
+
+
+    // SERVICES SEARCH
+    const searchInput = document.getElementById("serviceSearch");
+    const searchMessage = document.getElementById("searchMessage");
+    const serviceCards = document.querySelectorAll(".service-card");
+
+    if (searchInput && searchMessage) {
+        searchInput.addEventListener("input", function () {
+            const searchText = searchInput.value.toLowerCase().trim();
+            let visibleServices = 0;
+
+            serviceCards.forEach(function (card) {
+                const matches = card.textContent.toLowerCase().includes(searchText);
+                card.style.display = matches ? "" : "none";
+                if (matches) visibleServices++;
+            });
+
+            if (!searchText) {
+                searchMessage.textContent = "Browse our beauty services below.";
+            } else if (visibleServices === 0) {
+                searchMessage.textContent =
+                    "No services found. Try searching for makeup, lashes, nails or skincare.";
+            } else {
+                searchMessage.textContent = visibleServices + " service(s) found.";
+            }
+        });
+    }
+
+    // IMAGE LIGHTBOX
+    const lightbox = document.getElementById("imageLightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const closeLightbox = document.getElementById("closeLightbox");
+
+    if (lightbox && lightboxImage && closeLightbox) {
+        document.querySelectorAll(".service-card img").forEach(function (img) {
+            img.style.cursor = "pointer";
+
+            img.addEventListener("click", function () {
+                lightboxImage.src = img.src;
+                lightboxImage.alt = img.alt;
+                lightbox.classList.add("active");
+                lightbox.setAttribute("aria-hidden", "false");
+            });
+        });
+
+        function closeImageLightbox() {
+            lightbox.classList.remove("active");
+            lightbox.setAttribute("aria-hidden", "true");
+            lightboxImage.src = "";
+        }
+
+        closeLightbox.addEventListener("click", closeImageLightbox);
+
+        lightbox.addEventListener("click", function (event) {
+            if (event.target === lightbox) closeImageLightbox();
+        });
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") closeImageLightbox();
+        });
+    }
+    });
+    </script>
+    <script src="../js/script.js"></script>
 </body>
 </html>
         

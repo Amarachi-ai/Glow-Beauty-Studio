@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Lightbox Gallery</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Google Fonts Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.2);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Modal Fade Animation */
+    .modal-enter {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    .modal-enter-active {
+      opacity: 1;
+      transform: scale(1);
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .modal-exit {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .modal-exit-active {
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 0.2s cubic-bezier(0.7, 0, 0.84, 0), transform 0.2s cubic-bezier(0.7, 0, 0.84, 0);
+    }
+
+    /* Zoom Canvas Container */
+    .zoom-wrapper {
+      overflow: hidden;
+      position: relative;
+      cursor: grab;
+      user-select: none;
+    }
+    .zoom-wrapper:active {
+      cursor: grabbing;
+    }
+    .zoom-image {
+      transition: transform 0.1s ease-out;
+      transform-origin: center center;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col antialiased">
+
+  <!-- Header & Navigation -->
+  <header class="border-b border-slate-800/80 bg-slate-900/50 backdrop-blur-md sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center space-x-3">
+        <div class="bg-gradient-to-tr from-indigo-500 to-purple-500 p-2.5 rounded-xl shadow-lg shadow-indigo-500/20">
+          <i class="fa-solid fa-images text-xl text-white"></i>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold tracking-tight text-white">ProGallery</h1>
+          <p class="text-xs text-slate-400">Interactive Lightbox & Suite</p>
+        </div>
+      </div>
+
+      <!-- Controls: Categories & Upload -->
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <!-- Category Selector -->
+        <div class="flex bg-slate-800/80 p-1 rounded-xl border border-slate-700/50 text-xs sm:text-sm font-medium">
+          <button onclick="switchCategory('nature')" id="cat-nature" class="cat-btn px-3 py-1.5 rounded-lg transition text-white bg-indigo-600 shadow">Nature</button>
+          <button onclick="switchCategory('architecture')" id="cat-architecture" class="cat-btn px-3 py-1.5 rounded-lg transition text-slate-400 hover:text-white">Architecture</button>
+          <button onclick="switchCategory('travel')" id="cat-travel" class="cat-btn px-3 py-1.5 rounded-lg transition text-slate-400 hover:text-white">Travel</button>
+          <button onclick="switchCategory('art')" id="cat-art" class="cat-btn px-3 py-1.5 rounded-lg transition text-slate-400 hover:text-white">Art</button>
+        </div>
+
+        <!-- Dynamic Upload Button -->
+        <label class="cursor-pointer bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 hover:border-slate-600 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-medium flex items-center gap-2 transition active:scale-95 shadow-sm">
+          <i class="fa-solid fa-cloud-arrow-up text-indigo-400"></i>
+          <span>Add Images</span>
+          <input type="file" id="imageUploader" accept="image/*" multiple class="hidden" onchange="handleImageUpload(event)">
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Gallery -->
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Gallery Grid Header -->
+    <div class="flex items-center justify-between mb-6">
+      <div class="flex items-center gap-2">
+        <h2 id="galleryTitle" class="text-lg font-semibold text-slate-200">Nature Showcase</h2>
+        <span id="imageCountBadge" class="bg-slate-800 text-slate-400 text-xs font-semibold px-2.5 py-0.5 rounded-full border border-slate-700">6 images</span>
+      </div>
+      <p class="text-xs text-slate-500 hidden sm:block"><i class="fa-regular fa-keyboard mr-1"></i> Use Arrow keys & ESC to navigate modal</p>
+    </div>
+
+    <!-- Images Grid (Dynamically Populated) -->
+    <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <!-- Grid items dynamically injected here -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800/80 bg-slate-900/30 py-6 text-center text-xs text-slate-500">
+    <p>© 2026 ProGallery. Built with HTML5 Canvas, Tailwind CSS & JavaScript.</p>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div id="myModal" class="fixed inset-0 z-50 hidden flex flex-col justify-between bg-slate-950/95 backdrop-blur-xl transition-all duration-300">
+    
+    <!-- Modal Top Bar Controls -->
+    <div class="relative z-20 flex items-center justify-between px-4 sm:px-6 py-4 bg-gradient-to-b from-slate-950/80 to-transparent">
+      <!-- Counter & Title -->
+      <div class="flex items-center space-x-3">
+        <span id="modalCounter" class="bg-slate-800/80 border border-slate-700 text-slate-300 text-xs font-mono font-semibold px-3 py-1 rounded-full shadow">
+          1 / 4
+        </span>
+        <span id="modalTitle" class="text-sm font-medium text-slate-300 truncate max-w-[200px] sm:max-w-xs">
+          Image Title
+        </span>
+      </div>
+
+      <!-- Zoom Controls & Close -->
+      <div class="flex items-center space-x-2">
+        <button onclick="zoomOut()" title="Zoom Out (-)" class="p-2 text-slate-400 hover:text-white bg-slate-800/60 hover:bg-slate-800 rounded-lg border border-slate-700/50 transition">
+          <i class="fa-solid fa-magnifying-glass-minus"></i>
+        </button>
+        <button onclick="resetZoom()" title="Reset Zoom" class="px-2.5 py-2 text-xs font-mono text-slate-400 hover:text-white bg-slate-800/60 hover:bg-slate-800 rounded-lg border border-slate-700/50 transition">
+          100%
+        </button>
+        <button onclick="zoomIn()" title="Zoom In (+)" class="p-2 text-slate-400 hover:text-white bg-slate-800/60 hover:bg-slate-800 rounded-lg border border-slate-700/50 transition">
+          <i class="fa-solid fa-magnifying-glass-plus"></i>
+        </button>
+        <div class="h-4 w-px bg-slate-800 mx-1"></div>
+        <button onclick="closeModal()" title="Close (Esc)" class="p-2 text-slate-400 hover:text-white bg-slate-800/60 hover:bg-slate-800 rounded-lg border border-slate-700/50 transition">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Lightbox Display Area -->
+    <div class="relative flex-1 flex items-center justify-center p-2 sm:p-6 overflow-hidden">
+      <!-- Previous Arrow -->
+      <button onclick="plusSlides(-1)" class="absolute left-2 sm:left-6 z-30 p-3 sm:p-4 text-slate-300 hover:text-white bg-slate-900/60 hover:bg-slate-800/90 border border-slate-700/50 rounded-full transition shadow-xl hover:scale-105 active:scale-95">
+        <i class="fa-solid fa-chevron-left text-lg sm:text-xl"></i>
+      </button>
+
+      <!-- Zoomable Main Image Wrapper -->
+      <div id="zoomWrapper" class="zoom-wrapper w-full h-full flex items-center justify-center">
+        <img id="modalMainImage" class="zoom-image max-h-full max-w-full object-contain rounded-lg shadow-2xl" src="" alt="" />
+      </div>
+
+      <!-- Next Arrow -->
+      <button onclick="plusSlides(1)" class="absolute right-2 sm:right-6 z-30 p-3 sm:p-4 text-slate-300 hover:text-white bg-slate-900/60 hover:bg-slate-800/90 border border-slate-700/50 rounded-full transition shadow-xl hover:scale-105 active:scale-95">
+        <i class="fa-solid fa-chevron-right text-lg sm:text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Modal Bottom Section: Caption & Thumbnails Strip -->
+    <div class="relative z-20 bg-slate-900/80 border-t border-slate-800/80 pt-3 pb-4 px-4">
+      <!-- Caption Container -->
+      <div class="text-center mb-3">
+        <p id="caption" class="text-sm sm:text-base font-medium text-slate-200"></p>
+      </div>
+
+      <!-- Thumbnail Strip Navigation -->
+      <div class="max-w-4xl mx-auto overflow-x-auto pb-1">
+        <div id="modalThumbnails" class="flex justify-center items-center gap-2 min-w-max px-4">
+          <!-- Dynamically populated thumbnails -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Logic -->
+  <script>
+    // Initial Presets Gallery Data
+    const defaultCategories = {
+      nature: [
+        { thumb: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=500&auto=format&fit=crop', wide: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1600&auto=format&fit=crop', alt: 'Yosemite Valley Lake with Alpine Reflections' },
+        { thumb: 'https://images.unsplash.com/photo-1511884642898-4c92249e20b6?w=500&auto=format&fit=crop', wide: 'https://images.unsplash.com/photo-1511884642898-4c92249e20b6?w=1600&auto=format&fit=crop', alt: 'Serene Pine Forest Fog and Misty Hills' },
+        { thumb: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=500&auto=format&fit=crop', wide: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1600&auto=format&fit=crop', alt: 'Golden Sunset over Foggy Valley Mountains' },
+        { thumb: 'https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=500&auto=format&fit=crop', wide: 'https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=1600&auto=format&fit=crop', alt: 'Majestic Mountain Peak under Blue Sky' },
+        { thumb: 'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=500&auto=format&fit=crop', wide: 'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=1600&auto=format&fit=crop', alt: 'Lush Green Fields with Rolling Country Hills' },
+        { thumb: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=500&auto=format&fit=crop', wide: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1600&auto=format&fit=crop', alt: 'Solitary Path Trail through Mountain Wilderness' }
+      ],
+      architecture: [
+        { thumb: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&auto=format&fit=crop', wide: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&auto=format&fit=crop', alt: 'Futuristic Glass Skyscraper Geometric Facade' },
+        { thumb: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=500&auto=format&fit=crop', wide: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1600&auto=format&fit=crop', alt: 'Minimalist Interior Living Space Design' },
+        { thumb: 'https://images.unsplash.com/photo-1448630360428-65456885c650?w=500&auto=format&fit=crop', wide: 'https://images.unsplash.com/photo-1448630360428-65456885c650?w=1600&auto=format&fit=crop', alt: 'Modernist Residential Architecture' },
+        { thumb: 'https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?w=500&auto=format&fit=crop', wide: 'https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?w=1600&auto=format&fit=crop', alt: 'Classical Arched Gothic Cathedral Exterior' }
+      ],
+      travel: [
+        { thumb: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=500&auto=format&fit=crop', wide: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1600&auto=format&fit=crop', alt: 'Tropical Beach Resort Sunset Coastline' },
+        { thumb: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop', wide: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&auto=format&fit=crop', alt: 'Turquoise Ocean Wave Shoreline' },
+        { thumb: 'https://images.unsplash.com/photo-1500835556837-99ac94a94552?w=500&auto=format&fit=crop', wide: 'https://images.unsplash.com/photo-1500835556837-99ac94a94552?w=1600&auto=format&fit=crop', alt: 'Airplane Wing view above Clouds' },
+        { thumb: 'https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=500&auto=format&fit=crop', wide: 'https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=1600&auto=format&fit=crop', alt: 'Exotic Island Coast with Coral Reefs' }
+      ],
+      art: [
+        { thumb: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=500&auto=format&fit=crop', wide: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=1600&auto=format&fit=crop', alt: 'Vibrant Colorful Acrylic Fluid Painting' },
+        { thumb: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=500&auto=format&fit=crop', wide: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=1600&auto=format&fit=crop', alt: 'Classic European Painting Artwork in Museum' },
+        { thumb: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=500&auto=format&fit=crop', wide: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1600&auto=format&fit=crop', alt: 'Abstract Expressive Color Canvas Splatters' }
+      ]
+    };
+
+    let currentImages = [...defaultCategories.nature];
+    let activeCategory = 'nature';
+    let slideIndex = 1;
+
+    // Zoom & Pan state
+    let zoomLevel = 1;
+    let isDragging = false;
+    let startX = 0, startY = 0;
+    let translateX = 0, translateY = 0;
+
+    // Initialize application
+    window.onload = function() {
+      renderGallery();
+      setupZoomAndPan();
+      setupKeyboardControls();
+    };
+
+    // Render Main Gallery Grid
+    function renderGallery() {
+      const gridContainer = document.getElementById('galleryGrid');
+      const badge = document.getElementById('imageCountBadge');
+      gridContainer.innerHTML = '';
+      
+      badge.textContent = `${currentImages.length} images`;
+
+      currentImages.forEach((img, idx) => {
+        const item = document.createElement('div');
+        item.className = 'group relative overflow-hidden rounded-xl bg-slate-900 border border-slate-800/80 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer';
+        item.onclick = () => {
+          openModal();
+          currentSlide(idx + 1);
+        };
+
+        item.innerHTML = `
+          <div class="aspect-[4/3] w-full overflow-hidden bg-slate-800">
+            <img 
+              src="${img.thumb}" 
+              alt="${escapeHtml(img.alt)}" 
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              loading="lazy"
+              onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/94a3b8?text=Image+Unavailable';"
+            >
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+            <p class="text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-1">View Image</p>
+            <p class="text-sm font-medium text-white truncate">${escapeHtml(img.alt)}</p>
+          </div>
+        `;
+        gridContainer.appendChild(item);
+      });
+    }
+
+    // Category Switcher
+    function switchCategory(cat) {
+      if (defaultCategories[cat]) {
+        activeCategory = cat;
+        currentImages = [...defaultCategories[cat]];
+        
+        // Update Title & Buttons UI
+        document.getElementById('galleryTitle').textContent = cat.charAt(0).toUpperCase() + cat.slice(1) + ' Showcase';
+        document.querySelectorAll('.cat-btn').forEach(btn => {
+          btn.className = 'cat-btn px-3 py-1.5 rounded-lg transition text-slate-400 hover:text-white';
+        });
+        document.getElementById(`cat-${cat}`).className = 'cat-btn px-3 py-1.5 rounded-lg transition text-white bg-indigo-600 shadow';
+        
+        renderGallery();
+      }
+    }
+
+    // Dynamic Image Upload Handling
+    function handleImageUpload(event) {
+      const files = event.target.files;
+      if (!files || files.length === 0) return;
+
+      Array.from(files).forEach(file => {
+        if (!file.type.startsWith('image/')) return;
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const imgUrl = e.target.result;
+          currentImages.unshift({
+            thumb: imgUrl,
+            wide: imgUrl,
+            alt: file.name.replace(/\.[^/.]+$/, "") || 'Uploaded Image'
+          });
+          renderGallery();
+        };
+        reader.readAsDataURL(file);
+      });
+
+      // Clear input
+      event.target.value = '';
+    }
+
+    // Modal Control Functions
+    function openModal() {
+      const modal = document.getElementById("myModal");
+      modal.classList.remove("hidden");
+      document.body.style.overflow = "hidden"; // Prevent scrolling body
+      renderModalThumbnails();
+    }
+
+    function closeModal() {
+      const modal = document.getElementById("myModal");
+      modal.classList.add("hidden");
+      document.body.style.overflow = "auto";
+      resetZoom();
+    }
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      if (n > currentImages.length) { slideIndex = 1; }
+      if (n < 1) { slideIndex = currentImages.length; }
+      
+      resetZoom();
+
+      const currentObj = currentImages[slideIndex - 1];
+      const mainImg = document.getElementById("modalMainImage");
+      const captionText = document.getElementById("caption");
+      const counterText = document.getElementById("modalCounter");
+      const titleText = document.getElementById("modalTitle");
+
+      mainImg.src = currentObj.wide;
+      mainImg.alt = currentObj.alt;
+      captionText.innerHTML = escapeHtml(currentObj.alt);
+      counterText.innerHTML = `${slideIndex} / ${currentImages.length}`;
+      titleText.innerHTML = escapeHtml(currentObj.alt);
+
+      // Highlight active thumbnail
+      const thumbs = document.querySelectorAll(".modal-thumb");
+      thumbs.forEach((thumb, idx) => {
+        if (idx === slideIndex - 1) {
+          thumb.className = "modal-thumb w-16 h-12 object-cover rounded-lg border-2 border-indigo-500 opacity-100 cursor-pointer transition transform scale-105 shadow-md";
+          thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        } else {
+          thumb.className = "modal-thumb w-16 h-12 object-cover rounded-lg border border-slate-700 opacity-50 hover:opacity-100 cursor-pointer transition";
+        }
+      });
+    }
+
+    function renderModalThumbnails() {
+      const container = document.getElementById("modalThumbnails");
+      container.innerHTML = "";
+
+      currentImages.forEach((img, idx) => {
+        const thumb = document.createElement("img");
+        thumb.src = img.thumb;
+        thumb.alt = img.alt;
+        thumb.onclick = () => currentSlide(idx + 1);
+        thumb.className = "modal-thumb w-16 h-12 object-cover rounded-lg border border-slate-700 opacity-50 hover:opacity-100 cursor-pointer transition";
+        container.appendChild(thumb);
+      });
+    }
+
+    // Zoom & Pan Interactivity
+    function setupZoomAndPan() {
+      const wrapper = document.getElementById("zoomWrapper");
+      const img = document.getElementById("modalMainImage");
+
+      wrapper.addEventListener("mousedown", (e) => {
+        if (zoomLevel <= 1) return;
+        isDragging = true;
+        startX = e.clientX - translateX;
+        startY = e.clientY - translateY;
+      });
+
+      window.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        translateX = e.clientX - startX;
+        translateY = e.clientY - startY;
+        applyTransform();
+      });
+
+      window.addEventListener("mouseup", () => {
+        isDragging = false;
+      });
+
+      // Mouse Wheel Zoom
+      wrapper.addEventListener("wheel", (e) => {
+        e.preventDefault();
+        if (e.deltaY < 0) {
+          zoomIn();
+        } else {
+          zoomOut();
+        }
+      });
+
+      // Touch Events for Mobile Dragging
+      wrapper.addEventListener("touchstart", (e) => {
+        if (zoomLevel <= 1 || e.touches.length !== 1) return;
+        isDragging = true;
+        startX = e.touches[0].clientX - translateX;
+        startY = e.touches[0].clientY - startY;
+      });
+
+      wrapper.addEventListener("touchmove", (e) => {
+        if (!isDragging || e.touches.length !== 1) return;
+        translateX = e.touches[0].clientX - startX;
+        translateY = e.touches[0].clientY - startY;
+        applyTransform();
+      });
+
+      wrapper.addEventListener("touchend", () => {
+        isDragging = false;
+      });
+    }
+
+    function zoomIn() {
+      if (zoomLevel < 3.5) {
+        zoomLevel += 0.4;
+        applyTransform();
+      }
+    }
+
+    function zoomOut() {
+      if (zoomLevel > 1) {
+        zoomLevel -= 0.4;
+        if (zoomLevel <= 1) {
+          resetZoom();
+        } else {
+          applyTransform();
+        }
+      }
+    }
+
+    function resetZoom() {
+      zoomLevel = 1;
+      translateX = 0;
+      translateY = 0;
+      applyTransform();
+    }
+
+    function applyTransform() {
+      const img = document.getElementById("modalMainImage");
+      img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${zoomLevel})`;
+    }
+
+    // Keyboard Shortcuts Navigation
+    function setupKeyboardControls() {
+      document.addEventListener("keydown", (e) => {
+        const modal = document.getElementById("myModal");
+        if (modal.classList.contains("hidden")) return;
+
+        switch(e.key) {
+          case "Escape":
+            closeModal();
+            break;
+          case "ArrowLeft":
+            plusSlides(-1);
+            break;
+          case "ArrowRight":
+            plusSlides(1);
+            break;
+          case "+":
+          case "=":
+            zoomIn();
+            break;
+          case "-":
+            zoomOut();
+            break;
+          case "0":
+            resetZoom();
+            break;
+        }
+      });
+    }
+
+    // Helper: Escape HTML strings
+    function escapeHtml(str) {
+      return str.replace(/[&<>"']/g, function(m) {
+        return {
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#039;'
+        }[m];
+      });
+    }
+  </script>
+</body>
+</html>
